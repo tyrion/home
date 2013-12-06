@@ -7,5 +7,6 @@ fi
 
 apt-get update
 apt-get install -y python2.7 python-dev python-setuptools
-apt-get install -y tmux aptitude man-db command-not-found 
-su -c 'easy_install --user -U pip virtualenv' $SUDO_USER
+apt-get install -y tmux aptitude man-db command-not-found build-essential 
+su -c 'easy_install --user -U pip' $SUDO_USER
+su -c '~/.local/bin/pip install --user -U virtualenv virtualenvwrapper' $SUDO_USER
