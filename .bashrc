@@ -107,4 +107,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-[ -f $HOME/bin/virtualenvwrapper.sh ] && source $HOME/bin/virtualenvwrapper.sh
+[ -f `which virtualenvwrapper.sh` ] && source `which virtualenvwrapper.sh`
