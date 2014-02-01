@@ -108,3 +108,5 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 [ -f $HOME/.local/bin/virtualenvwrapper.sh ] && source $HOME/.local/bin/virtualenvwrapper.sh
+
+alias docker-ip="docker inspect -format '{{ .NetworkSettings.IPAddress }}'"
