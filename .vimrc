@@ -6,12 +6,17 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-" Bundle 'kien/ctrlp.vim'
-" Bundle 'SirVer/ultisnips'
-" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'cakebaker/scss-syntax.vim'
+" Plugin 'kien/ctrlp.vim'
+" Plugin 'SirVer/ultisnips'
+Plugin 'othree/eregex.vim'
+Plugin 'hylang/vim-hy'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+
 
 filetype plugin indent on
 
@@ -21,7 +26,6 @@ colors zenburn
 set guioptions-=T
 set encoding=utf8
 set ffs=unix,dos,mac
-set nobackup
 
 set expandtab
 set smarttab
@@ -33,8 +37,8 @@ set smartindent
 set ruler
 
 autocmd FileType text setlocal textwidth=78
-autocmd FileType html,css,xml,htmldjango setlocal shiftwidth=2
-    \ tabstop=2
+autocmd FileType html,xhtml,css,scss,xml,htmldjango,eruby,ruby,javascript
+    \ setlocal shiftwidth=2 tabstop=2
 
 set incsearch
 set ignorecase
@@ -52,8 +56,6 @@ set novisualbell
 set t_vb=
 
 
-" TODO usare il comando "directory" per non avere i .swp in mezzo alle scatole
-" guardare sensible.vim
 set mouse=a
 
 
@@ -76,3 +78,24 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 
 " http://stackoverflow.com/questions/1919028/how-to-show-vertical-line-to-wrap-the-line-in-vim
 set colorcolumn=80
+
+let g:airline_powerline_fonts = 1
+
+set pastetoggle=<F10>
+
+" http://stackoverflow.com/questions/7342441/how-would-i-have-vim-highlight-redundant-white-space-and-all-tabs
+" match Error /\s\+$\|\t/
+" highlight RedundantWhitespace ctermbg=red guibg=red
+
+" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
+
+set directory=$HOME/.vim/swapfiles//
+set undodir=$HOME/.vim/undo
+set undofile
+set nobackup
