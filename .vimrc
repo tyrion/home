@@ -16,13 +16,17 @@ Plugin 'othree/eregex.vim'
 Plugin 'hylang/vim-hy'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+" Plugin 'edkolev/promptline.vim'
+" Plugin 'edkolev/tmuxline.vim'
+Plugin 'altercation/vim-colors-solarized'
 
 
 filetype plugin indent on
 
-set t_Co=256
+set t_Co=16
 syntax on
-colors zenburn
+set background=dark
+colors solarized
 set guioptions-=T
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -55,9 +59,8 @@ set noerrorbells
 set novisualbell
 set t_vb=
 
-
 set mouse=a
-
+set ttymouse=xterm2 " Fixes drag and drop in tmux.
 
 " chiudi vim se l'unica finestra è NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -80,6 +83,9 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 set colorcolumn=80
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:tmuxline_separators = {
+    \ 'left_alt': ''}
 
 set pastetoggle=<F10>
 
