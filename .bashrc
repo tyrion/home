@@ -111,6 +111,7 @@ fi
 [ -f $HOME/.local/bin/virtualenvwrapper.sh ] && source $HOME/.local/bin/virtualenvwrapper.sh
 
 alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias tm="TERMINFO=/usr/share/terminfo/x/xterm-16color TERM=xterm-16color tmux -2"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
