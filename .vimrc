@@ -3,10 +3,10 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -19,8 +19,9 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'edkolev/promptline.vim'
 " Plugin 'edkolev/tmuxline.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'rust-lang/rust.vim'
 
-
+call vundle#end()
 filetype plugin indent on
 
 set t_Co=16
