@@ -84,9 +84,15 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alhF'
 alias la='ls -A'
 alias l='ls -CF'
+alias s='sudo'
+alias a='aptitude'
+alias sa='sudo aptitude'
+alias update='sudo aptitude update'
+alias upgrade='sudo aptitude upgrade'
+alias i='sudo aptitude install'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -108,10 +114,21 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-[ -f $HOME/.local/bin/virtualenvwrapper.sh ] && source $HOME/.local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.local/lib/virtualenvwrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias tm="TERMINFO=/usr/share/terminfo/x/xterm-16color TERM=xterm-16color tmux -2"
 
+sopcast() {
+    $HOME/Downloads/sopcast/sp-auth/sp-sc-auth $1 3908 8908
+}
+
+as() {
+    aptitude search "~n$1"
+}
+
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# export PATH="/usr/local/heroku/bin:$PATH"
