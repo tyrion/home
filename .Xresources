@@ -7,8 +7,12 @@
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
 
+!! URxvt*background: #002b36
 URxvt*background:            S_base03
-URxvt*foreground:            S_base0
+!! URxvt*foreground:            S_base0
+!! URxvt*foreground: #657b83
+URxvt*foreground:            S_base00
+
 URxvt*fadeColor:             S_base03
 URxvt*cursorColor:           S_base1
 URxvt*pointerColorBackground:S_base01
@@ -67,10 +71,22 @@ URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 URxvt*shading: 15
 URxvt*saveLines: 12000
-URxvt*foreground: #657b83
-URxvt*background: #002b36
 URxvt*scrollBar: true
 URxvt*scrollBar_right: false
 URxvt*scrollstyle: plain
 URxvt*font: xft:SourceCodePro\-Regular:pixelsize=11
 ! URxvt*font: xft:UbuntuMono\-R:pixelsize=12
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+URxvt.visualBell:       true
