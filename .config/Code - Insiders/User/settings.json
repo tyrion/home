@@ -1,0 +1,54 @@
+{
+    "editor.fontFamily": "'LigaSrc Pro', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "400",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 2000,
+    "editor.minimap.enabled": false,
+    "editor.rulers": [
+        79
+    ],
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.watcherExclude": {
+        "**/.mypy_cache/**": true,
+        "**/.venv/**": true,
+        "**/__pycache__/**": true
+    },
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "79",
+        "--py36"
+    ],
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.flake8CategorySeverity.E": "Information",
+    "python.linting.flake8CategorySeverity.W": "Hint",
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyArgs": [
+        "--ignore-missing-imports",
+        "--follow-imports=silent",
+        "--check-untyped-defs"
+    ],
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyPath": "/usr/local/bin/mypy",
+    "python.linting.pep8CategorySeverity.E": "Information",
+    "python.linting.pep8CategorySeverity.W": "Hint",
+    "python.linting.pep8Enabled": false,
+    "python.linting.pep8Path": "pycodestyle",
+    "python.linting.pylintArgs": [
+        "--disable=all",
+        "--enable=C",
+        "--disable=C0103,C0301,C0111,C0326"
+    ],
+    "python.linting.pylintEnabled": false,
+    "python.linting.pylintUseMinimalCheckers": false,
+    "telemetry.enableTelemetry": false,
+    "vetur.format.defaultFormatterOptions": {
+        "prettier": {
+            "semi": false
+        }
+    },
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Solarized Dark"
+}
