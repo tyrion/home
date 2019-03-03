@@ -130,5 +130,7 @@ as() {
     aptitude search "~n$1"
 }
 
+export PYTHONSTARTUP=$HOME/.config/python.py
+
 ### Added by the Heroku Toolbelt
 # export PATH="/usr/local/heroku/bin:$PATH"
